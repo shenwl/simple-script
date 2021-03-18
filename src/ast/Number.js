@@ -5,4 +5,5 @@ export default class Number {
     this.value = value;
   }
   toString = () => `${this.value}`;
+  evaluate = () => this;
 }

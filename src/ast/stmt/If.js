@@ -19,4 +19,12 @@ export default class If {
       return [this.alternative, enviroment];
     }
   }
+
+  evaluate = (enviroment) => {
+    if (this.condition.evaluate(enviroment).value) {
+      return this.consequence.evaluate(enviroment);
+    } else {
+      return this.alternative.evaluate(enviroment);
+    }
+  }
 }

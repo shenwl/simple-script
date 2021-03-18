@@ -16,4 +16,9 @@ export default class Assign {
     }
     return [new DoNothing(), { ...enviroment, [this.name]: this.expr }];
   }
+
+  evaluate = (enviroment) => {
+    enviroment[this.name] = this.expr.evaluate(enviroment);
+    return enviroment;
+  }
 }

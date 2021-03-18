@@ -17,4 +17,8 @@ export default class Sequence {
     const [reducedFirst, reducedEnv] = this.first.reduce(enviroment);
     return [new Sequence(reducedFirst, this.second), reducedEnv];
   }
+
+  evaluate = (enviroment) => {
+    return this.second.evaluate(this.first.evaluate(enviroment));
+  }
 }

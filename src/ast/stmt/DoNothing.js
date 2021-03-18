@@ -4,4 +4,8 @@ export default class DoNothing {
   static equal = (expr) => expr instanceof DoNothing;
 
   toString = () => `doNothing`;
+
+  evaluate = (enviroment) => {
+    return enviroment;
+  }
 }

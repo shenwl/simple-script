@@ -18,4 +18,12 @@ export default class While {
       enviroment,
     ];
   }
+
+  evaluate = (enviroment) => {
+    if (this.condition.evaluate(enviroment).value) {
+      return this.evaluate(this.body.evaluate(enviroment));
+    } else {
+      return enviroment;
+    }
+  }
 }

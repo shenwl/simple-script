@@ -19,4 +19,8 @@ export default class LessThan {
     }
     return new Boolean(this.left.value < this.right.value);
   }
+
+  evaluate = (enviroment) => {
+    return new Boolean(this.left.evaluate(enviroment).value < this.right.evaluate(enviroment).value);
+  }
 }

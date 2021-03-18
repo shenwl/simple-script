@@ -8,4 +8,5 @@ export default class Variable {
   toString = () => `${this.name}`;
 
   reduce = (enviroment) => enviroment[this.name];
+  evaluate = (enviroment) => enviroment[this.name];
 }

@@ -5,4 +5,5 @@ export default class Boolean {
     this.value = value;
   }
   toString = () => this.value ? 'true' : 'false';
+  evaluate = () => this;
 }

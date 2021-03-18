@@ -19,4 +19,8 @@ export default class Add {
     }
     return new Number(this.left.value + this.right.value);
   }
+
+  evaluate = (enviroment) => {
+    return new Number(this.left.evaluate(enviroment).value + this.right.evaluate(enviroment).value);
+  }
 }
