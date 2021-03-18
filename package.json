@@ -1,0 +1,11 @@
+{
+  "name": "simple-script",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "author": "shenwl",
+  "license": "MIT",
+  "devDependencies": {}
+}
