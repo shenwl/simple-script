@@ -9,9 +9,10 @@ export default class Enviroment {
     return this.data[key];
   }
   set = (key, value) => {
-    return this.data[key] = value;
+    this.data[key] = value;
   }
   merge = (obj) => {
-    return this.data = { ...this.data, ...obj };
+    this.data = { ...this.data, ...obj };
+    return this;
   }
 }
