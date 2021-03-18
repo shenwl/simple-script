@@ -2,8 +2,9 @@
   "name": "simple-script",
   "version": "0.0.1",
   "description": "",
+  "type": "module",
   "scripts": {
-    "start": "node ./src/index.js"
+    "start": "node src/index.js"
   },
   "author": "shenwl",
   "license": "MIT",

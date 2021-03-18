@@ -1,0 +1,1 @@
+import './tests/reduce.test.js';

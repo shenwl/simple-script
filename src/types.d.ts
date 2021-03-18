@@ -1,14 +1,7 @@
-interface Enviroment {
-  data: any;
-  get: (key: string) => any;
-  set: (key: string, value: any) => void;
-  merge: (data: any) => Enviroment;
-}
-
 interface ASTNode {
   reducible: boolean;
-  reduce?: (enviroment: Enviroment) => null;
-  evaluate: (enviroment: Enviroment) => null;
+  reduce?: (enviroment: any) => null;
+  evaluate: (enviroment: any) => null;
   toString: () => string;
 }
 
