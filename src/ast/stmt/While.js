@@ -26,4 +26,13 @@ export default class While {
       return enviroment;
     }
   }
+
+  toJavaScript = (enviroment) => {
+    eval(`
+      while(this.condition.toJavaScript(enviroment)) {
+        this.body.toJavaScript(enviroment)
+      }
+    `);
+    return enviroment;
+  };
 }

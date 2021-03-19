@@ -9,5 +9,5 @@ export default class DoNothing {
     return enviroment;
   }
 
-  toJavaScript = (enviroment) => void(0);
+  toJavaScript = (enviroment) => enviroment;
 }

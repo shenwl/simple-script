@@ -21,4 +21,9 @@ export default class Sequence {
   evaluate = (enviroment) => {
     return this.second.evaluate(this.first.evaluate(enviroment));
   }
+
+  toJavaScript = (enviroment) => {
+    eval(`this.second.toJavaScript(this.first.toJavaScript(enviroment))`);
+    return enviroment;
+  };
 }
