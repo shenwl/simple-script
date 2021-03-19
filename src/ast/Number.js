@@ -6,5 +6,5 @@ export default class Number {
   }
   toString = () => `${this.value}`;
   evaluate = () => this;
-  toJavaScript = (enviroment) => eval(this.toString());
+  toJavaScript = () => this.value;
 }

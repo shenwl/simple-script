@@ -28,17 +28,13 @@ export default class If {
     }
   }
 
-  toJavaScript = (enviroment) => {
-    if(this.condition.toJavaScript(enviroment)) {
-
-    }
-    eval(`
-      if(this.condition.toJavaScript(enviroment)) {
-        this.consequence.toJavaScript(enviroment)
+  toJavaScript = () => {
+    return `{
+      if(${this.condition.toJavaScript()}) {
+        ${this.consequence.toJavaScript()}
       } else {
-        this.alternative.toJavaScript(enviroment)
+        ${this.alternative.toJavaScript()}
       }
-    `);
-    return enviroment;
+    }`;
   };
 }

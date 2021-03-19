@@ -6,5 +6,5 @@ export default class Boolean {
   }
   toString = () => this.value ? 'true' : 'false';
   evaluate = () => this;
-  toJavaScript = (enviroment) => eval(this.toString());
+  toJavaScript = () => this.value;
 }

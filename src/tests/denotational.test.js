@@ -14,23 +14,23 @@ import Multiply from '../ast/operation/Multiply.js';
 import DoNothing from '../ast/stmt/DoNothing.js';
 
 console.log('-----denotational.test add/variable/number/toJavaScript-----')
-console.log(new Add(new Variable('x'), new Number(10)).toJavaScript({ x: new Number(1) }));
+console.log(eval('var e = {x: 1};' + new Add(new Variable('x'), new Number(10)).toJavaScript()));
 
 console.log('-----denotational.test lessThan/variable/number/toJavaScript-----')
-console.log(new LessThan(new Variable('x'), new Number(10)).toJavaScript({ x: new Number(1) }));
+console.log(eval('var e = {x: 1};' + new LessThan(new Variable('x'), new Number(10)).toJavaScript()));
 
 console.log('-----denotational.test assign-----')
-console.log(new Assign('x', new Number(10)).toJavaScript({ x: new Number(1) }));
+console.log(eval('var e = {x: 1};' + new Assign('x', new Number(10)).toJavaScript()));
 
 console.log('-----denotational.test while-----')
-console.log(new While(
+console.log('var e = {x: 1};' + new While(
   new LessThan(new Variable('x'), new Number(10)),
   new Assign('x', new Multiply(new Variable('x'), new Number(3))),
-).toJavaScript({ x: new Number(1) }));
+).toJavaScript());
 
 console.log('-----denotational.test if-----')
-console.log(new If(
+console.log(eval('var e = {x: 5};' + new If(
   new LessThan(new Variable('x'), new Number(4)),
   new Assign('x', new Number(10)),
   new Assign('x', new Number(20)),
-).toJavaScript({ x: new Number(5) }));
+).toJavaScript()));

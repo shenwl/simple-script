@@ -27,12 +27,11 @@ export default class While {
     }
   }
 
-  toJavaScript = (enviroment) => {
-    eval(`
-      while(this.condition.toJavaScript(enviroment)) {
-        this.body.toJavaScript(enviroment)
+  toJavaScript = () => {
+    return `
+      while(${this.condition.toJavaScript()}) {
+        ${this.body.toJavaScript()}
       }
-    `);
-    return enviroment;
+    `;
   };
 }

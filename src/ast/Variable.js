@@ -9,5 +9,5 @@ export default class Variable {
 
   reduce = (enviroment) => enviroment[this.name];
   evaluate = (enviroment) => enviroment[this.name];
-  toJavaScript = (enviroment) => eval(`enviroment['${this.name}']`);
+  toJavaScript = () => `e['${this.name}']`;
 }
