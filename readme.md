@@ -12,10 +12,14 @@ node >= 14.0
 比操作语义抽象层次更高，忽略了程序如何执行的细节，只关心把它转化为另一种表示。
 还有其他语义，比如公理化语义（axiomatic semantic）
 
-3. denotational_semantic 产出JS代码
+1. denotational_semantic 产出JS代码
 
 #### 形式化语义
 一个重要应用：是为一种编程语言的含义找出一种无歧义的定义。
 形式化的指称语义使用抽象的数学对象（通常为函数）来表示表达式和语句这样的编程语言结构。
 
-4. formal_semantic 
+1. formal_semantic 
+
+#### 有穷自动机
+
+1. deterministic_finite_automaton
