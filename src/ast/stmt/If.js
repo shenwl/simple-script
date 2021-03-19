@@ -27,4 +27,14 @@ export default class If {
       return this.alternative.evaluate(enviroment);
     }
   }
+
+  toJavaScript = (enviroment) => {
+    return eval(`
+      if(${this.condition.toJavaScript(enviroment)}) {
+        ${this.consequence.toJavaScript(enviroment)}
+      } else {
+        ${this.alternative.toJavaScript(enviroment)}
+      }
+    `);
+  };
 }
