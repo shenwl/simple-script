@@ -1,6 +1,7 @@
 interface ASTNode {
   reducible: boolean;
   reduce?: (enviroment: any) => null;
+  eval: () => any;
   evaluate: (enviroment: any) => null;
   toString: () => string;
 }

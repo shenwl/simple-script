@@ -23,4 +23,8 @@ export default class LessThan {
   evaluate = (enviroment) => {
     return new Boolean(this.left.evaluate(enviroment).value < this.right.evaluate(enviroment).value);
   }
+
+  toJavaScript = (enviroment) => {
+    return eval(`${this.left.toJavaScript(enviroment)} < ${this.right.toJavaScript(enviroment)}`)
+  };
 }

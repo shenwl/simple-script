@@ -23,4 +23,8 @@ export default class Add {
   evaluate = (enviroment) => {
     return new Number(this.left.evaluate(enviroment).value + this.right.evaluate(enviroment).value);
   }
+
+  toJavaScript = (enviroment) => {
+    return eval(`${this.left.toJavaScript(enviroment)} + ${this.right.toJavaScript(enviroment)}`)
+  };
 }
