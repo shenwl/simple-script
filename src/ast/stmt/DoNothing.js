@@ -8,4 +8,6 @@ export default class DoNothing {
   evaluate = (enviroment) => {
     return enviroment;
   }
+
+  toJavaScript = (enviroment) => void(0);
 }

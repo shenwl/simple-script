@@ -21,4 +21,8 @@ export default class Assign {
     enviroment[this.name] = this.expr.evaluate(enviroment);
     return enviroment;
   }
+
+  toJavaScript = (enviroment) => {
+    return eval(`enviroment['${this.name}'] = ${this.expr.toJavaScript(enviroment)}`);
+  };
 }
