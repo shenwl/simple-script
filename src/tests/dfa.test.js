@@ -1,4 +1,5 @@
 import DFA from "../dfa/DFA.js";
+import DFADesign from "../dfa/DFADesign.js";
 import DFARuleBook from "../dfa/DFARuleBook.js";
 import FARule from "../dfa/FARule.js";
 
@@ -23,3 +24,10 @@ dfa.readString('aaaa');
 console.log(dfa.accepting);
 dfa.readString('aaab');
 console.log(dfa.accepting);
+
+const dfaDesign = new DFADesign(1, [3], ruleBook);
+
+console.log('-----测试DFADesign-----')
+console.log(dfaDesign.accepts('b'));
+console.log(dfaDesign.accepts('aaaa'));
+console.log(dfaDesign.accepts('aaab'));
