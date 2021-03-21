@@ -1,7 +1,7 @@
 import DFA from "../dfa/DFA.js";
 import DFADesign from "../dfa/DFADesign.js";
 import DFARuleBook from "../dfa/DFARuleBook.js";
-import FARule from "../dfa/FARule.js";
+import FARule from "../common/FARule.js";
 
 const ruleBook = new DFARuleBook([
   new FARule(1, 'a', 2), new FARule(1, 'b', 1),
