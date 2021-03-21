@@ -1,14 +1,14 @@
 import DFA from "./DFA.js";
 
 export default class DFADesign {
-  constructor(startStates, acceptStates, ruleBook) {
-    this.startStates = startStates;
+  constructor(startState, acceptStates, ruleBook) {
+    this.startState = startState;
     this.acceptStates = acceptStates;
     this.ruleBook = ruleBook;
   }
 
   toDfa = () => {
-    return new DFA(this.startStates, this.acceptStates, this.ruleBook);
+    return new DFA(this.startState, this.acceptStates, this.ruleBook);
   }
 
   accepts = (str) => {
