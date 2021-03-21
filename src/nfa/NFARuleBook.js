@@ -13,7 +13,7 @@ export default class NFARuleBook {
    * @param {Set} states 
    * @param {character} char 
    */
-  nextState = (states, char) => {
+  nextStates = (states, char) => {
     return [...new Set(flatMap(states.map(state => this.followRulesFor(state, char))))];
   }
 
