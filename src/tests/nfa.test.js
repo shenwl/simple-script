@@ -9,7 +9,7 @@ const ruleBook = new NFARuleBook([
   new FARule(3, 'a', 4), new FARule(3, 'b', 4),
 ])
 
-console.log('-----测试DFARuleBook-----')
+console.log('-----测试NFARuleBook-----')
 console.log(ruleBook.nextState([1], 'a'));
 console.log(ruleBook.nextState([1, 2], 'b'));
 console.log(ruleBook.nextState([1, 3], 'b'));
