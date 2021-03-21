@@ -10,6 +10,7 @@ export default class DFA {
   }
 
   readChar = (char) => {
+    if (!char || char.length !== 1) throw Error('invalid char: ' + char);
     this.currentState = this.ruleBook.nextState(this.currentState, char);
   }
 
