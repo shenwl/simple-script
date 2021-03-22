@@ -3,5 +3,5 @@
 // import './tests/denotational.test.js';
 // import './tests/dfa.test.js';
 // import './tests/nfa.test.js';
-import './tests/regex.test.js';
+import './tests/pattern.test.js';
 
