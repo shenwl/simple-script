@@ -15,3 +15,13 @@ export function flatMap(arr) {
 
   return result;
 }
+
+export function isContain(arr, subArr) {
+  if (!Array.isArray(arr) || !Array.isArray(subArr)) return false;
+  for (let item of subArr) {
+    if (!arr.includes(item)) {
+      return false;
+    }
+  }
+  return true;
+}
