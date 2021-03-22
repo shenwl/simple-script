@@ -6,6 +6,7 @@ export default class Literal extends Empty {
   precedence = 3;
 
   constructor(char) {
+    super();
     this.char = char;
   }
 

@@ -7,8 +7,9 @@ export default class Repeat extends Empty {
   precedence = 2;
 
   constructor(pattern) {
+    super();
     this.pattern = pattern;
   }
 
-  toString = () => `${pattern.bracket(this.precedence)}*`;
+  toString = () => `${this.pattern.bracket(this.precedence)}*`;
 }

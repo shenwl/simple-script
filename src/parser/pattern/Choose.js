@@ -7,9 +7,10 @@ export default class Choose extends Empty {
   precedence = 0;
 
   constructor(first, second) {
+    super();
     this.first = first;
     this.second = second;
   }
 
-  toString = () => [first, second].map(pattern => pattern.bracket(this.precedence)).join('|');
+  toString = () => [this.first, this.second].map(pattern => pattern.bracket(this.precedence)).join('|');
 }
