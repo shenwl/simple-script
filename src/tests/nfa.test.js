@@ -52,10 +52,10 @@ const rulebook2 = new NFARulebook([
 ])
 console.log(rulebook2.followFreeMoves([1]));
 
-// console.log('-----测试NFADesign识别字符串-----')
-// const nfaDesign2 = new NFADesign(1, [2, 4], rulebook2);
+console.log('-----测试NFADesign识别字符串-----')
+const nfaDesign2 = new NFADesign(1, [2, 4], rulebook2);
 
-// console.log(nfaDesign2.accepts('aa')); // true
-// console.log(nfaDesign2.accepts('aaa')); // true
-// console.log(nfaDesign2.accepts('aaaaa')); // false
-// console.log(nfaDesign2.accepts('aaaaaa')); // true
+console.log(nfaDesign2.accepts('aa')); // true
+console.log(nfaDesign2.accepts('aaa')); // true
+console.log(nfaDesign2.accepts('aaaaa')); // false
+console.log(nfaDesign2.accepts('aaaaaa')); // true
