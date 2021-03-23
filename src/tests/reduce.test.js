@@ -21,8 +21,11 @@ import Sequence from '../ast/stmt/Sequence.js';
 // machine.run(`window.x = 2; var x = 1 * 2 + 3 * 4`)
 /** ast:
  *            Assign
+ *      /                   \
  *    x                     Add
+ *                   /                \
  *              Multiply               Multiply
+ *              /       \           /          \
  *         Number(1)  Number(2)   Number(2)   Number(4)
  * 
  * env: x = Number(2)
