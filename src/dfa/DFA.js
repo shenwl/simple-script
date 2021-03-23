@@ -2,7 +2,7 @@ export default class DFA {
   /**
    * 
    * @param {*} currentState 当前状态
-   * @param {*} acceptStates 接受的状态集合(去重数组)
+   * @param {*} acceptStates 接受的状态集合(去重数组)，到了这个状态等于匹配完成，accepting = true
    * @param {DFARuleBook} ruleBook 规则手册
    */
   constructor(currentState, acceptStates, ruleBook) {
