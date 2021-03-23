@@ -24,4 +24,8 @@ export default class Empty {
     const ruleBook = new NFARuleBook([]);
     return new NFADesign(startState, acceptStates, ruleBook);
   }
+
+  matches = (str) => {
+    return this.toNfaDesign().accepts(str);
+  }
 }

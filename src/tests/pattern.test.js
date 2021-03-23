@@ -21,4 +21,10 @@ console.log('----Literal.toNfaDesign-----')
 const nfaDesign2 = new Literal('a').toNfaDesign();
 console.log(nfaDesign2.accepts(''));
 console.log(nfaDesign2.accepts('a'));
-console.log(nfaDesign2.accepts('b'));
+
+console.log('----测试pattern，Empty.matches-----')
+const pattern3 = new Repeat(new Literal('a'));
+
+console.log(new Literal('a').matches(''));
+console.log(new Literal('a').matches('aa'));
+
