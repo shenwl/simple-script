@@ -1,4 +1,4 @@
-export function flatMap(arr) {
+export function flat(arr) {
   if (!Array.isArray(arr)) return arr;
   const result = [];
 

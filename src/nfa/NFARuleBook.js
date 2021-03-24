@@ -1,4 +1,4 @@
-import { flatMap, isContain } from '../common/utils.js';
+import { flat, isContain } from '../common/utils.js';
 
 /**
  * NFARuleBook：在NFA处于几种可能状态之一时，读取一个特定的字符，可能的下一个状态是什么？
@@ -25,7 +25,7 @@ export default class NFARuleBook {
    * @param {character} char 
    */
   nextStates = (states, char) => {
-    return [...new Set(flatMap(states.map(state => this.followRulesFor(state, char))))];
+    return [...new Set(flat(states.map(state => this.followRulesFor(state, char))))];
   }
 
   /**
