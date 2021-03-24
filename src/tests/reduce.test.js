@@ -18,6 +18,18 @@ import While from '../ast/stmt/While.js';
 import Sequence from '../ast/stmt/Sequence.js';
 
 
+// machine.run(`window.x = 2; var x = 1 * 2 + 3 * 4`)
+/** ast:
+ *            Assign
+ *      /                   \
+ *    x                     Add
+ *                   /                \
+ *              Multiply               Multiply
+ *              /       \           /          \
+ *         Number(1)  Number(2)   Number(2)   Number(4)
+ * 
+ * env: x = Number(2)
+ */
 const testResult1 = new Machine(new Assign('x', new Add(
   new Multiply(new Number(1), new Number(2)),
   new Multiply(new Number(3), new Number(4)),
