@@ -37,3 +37,24 @@ const pattern4 = new Choose(new Literal('a'), new Literal('b'));
 console.log(pattern4.matches('a'));
 console.log(pattern4.matches('b'));
 console.log(pattern4.matches('ab'));
+
+console.log('----测试pattern，Repeat.matches-----')
+const pattern5 = new Repeat(new Literal('a'));
+console.log(pattern5.matches('a'));
+console.log(pattern5.matches(''));
+console.log(pattern5.matches('aaa'));
+console.log(pattern5.matches('aab'));
+
+console.log('----测试pattern组合: /(a(|b))*/-----')
+const pattern6 = new Repeat(
+  new Concatenate(
+    new Literal('a'), 
+    new Choose(new Empty(), new Literal('b'))
+  )
+);
+console.log(pattern6.matches('')); // true
+console.log(pattern6.matches('a')); // true
+console.log(pattern6.matches('aaa')); // true
+console.log(pattern6.matches('aab')); // true
+console.log(pattern6.matches('aba')); // true
+console.log(pattern6.matches('abba')); // false
