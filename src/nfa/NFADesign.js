@@ -7,8 +7,12 @@ export default class NFADesign {
     this.ruleBook = ruleBook;
   }
 
-  toNfa = () => {
-    return new NFA([this.startState], this.acceptStates, this.ruleBook);
+  /**
+   * @param {*} currentStates 当前状态集合 
+   * 让NFADesign可以从任意集合状态构造NFA，而不是只能从NFADesign的起始状态
+   */
+  toNfa = (currentStates = [this.startState]) => {
+    return new NFA(currentStates, this.acceptStates, this.ruleBook);
   }
 
   accepts = (str) => {

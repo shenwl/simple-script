@@ -3,5 +3,6 @@
 // import './tests/denotational.test.js';
 // import './tests/dfa.test.js';
 // import './tests/nfa.test.js';
-import './tests/pattern.test.js';
+// import './tests/pattern.test.js';
+import './tests/nfaEquivalency.test.js';
 
