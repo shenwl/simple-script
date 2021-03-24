@@ -31,3 +31,9 @@ const pattern3 = new Concatenate(new Literal('a'), new Literal('b'));
 console.log(pattern3.matches('a'));
 console.log(pattern3.matches('ab'));
 console.log(pattern3.matches('aab'));
+
+console.log('----测试pattern，Choose.matches-----')
+const pattern4 = new Choose(new Literal('a'), new Literal('b'));
+console.log(pattern4.matches('a'));
+console.log(pattern4.matches('b'));
+console.log(pattern4.matches('ab'));
