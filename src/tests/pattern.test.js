@@ -23,8 +23,11 @@ console.log(nfaDesign2.accepts(''));
 console.log(nfaDesign2.accepts('a'));
 
 console.log('----测试pattern，Empty.matches-----')
-const pattern3 = new Repeat(new Literal('a'));
-
 console.log(new Literal('a').matches(''));
 console.log(new Literal('a').matches('aa'));
 
+console.log('----测试pattern，Concatenate.matches-----')
+const pattern3 = new Concatenate(new Literal('a'), new Literal('b'));
+console.log(pattern3.matches('a'));
+console.log(pattern3.matches('ab'));
+console.log(pattern3.matches('aab'));
