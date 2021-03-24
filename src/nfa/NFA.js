@@ -40,7 +40,6 @@ export default class NFA {
    * @param {*} char 
    */
   readChar = (char) => {
-    if (!char || char.length !== 1) throw Error('invalid char: ' + char);
     this.currentStates = this.ruleBook.nextStates(this.currentStates, char);
   }
 

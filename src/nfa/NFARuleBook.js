@@ -13,6 +13,13 @@ export default class NFARuleBook {
   }
 
   /**
+   * NFA可以读取哪些字符
+   */
+  get alphabet() {
+    return [...new Set(this.rules.map(rule => rule.char).filter(char => char !== null))];
+  }
+
+  /**
    * 在处于这几种可能状态之一时，读取的特定字符，可能的下一个状态列表
    * @param {number[]} states 
    * @param {character} char 

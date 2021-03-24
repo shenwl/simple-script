@@ -1,3 +1,6 @@
+/**
+ * 测试等价性
+ */
 // import NFA from "../nfa/NFA.js";
 import NFARuleBook from "../nfa/NFARuleBook.js";
 
@@ -30,4 +33,10 @@ console.log(simulation.nextState([1, 2], 'a'))  // [1,2]
 console.log(simulation.nextState([1, 2], 'b'))  // [3,2]
 console.log(simulation.nextState([1, 3, 2], 'b'))  // [1,3,2]
 console.log(simulation.nextState([1, 3, 2], 'a'))  // [1,2]
+
+console.log('-----测试NFARuleBook.alphabet-----')
+console.log(ruleBook.alphabet);
+console.log('-----测试NFASimulation.rulesFor-----')
+console.log(simulation.rulesFor([1,2]));
+
 

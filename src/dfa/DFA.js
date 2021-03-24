@@ -23,7 +23,6 @@ export default class DFA {
    * @param {*} char 
    */
   readChar = (char) => {
-    if (!char || char.length !== 1) throw Error('invalid char: ' + char);
     this.currentState = this.ruleBook.nextState(this.currentState, char);
   }
 
