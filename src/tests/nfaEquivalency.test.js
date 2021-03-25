@@ -38,5 +38,7 @@ console.log('-----测试NFARuleBook.alphabet-----')
 console.log(ruleBook.alphabet);
 console.log('-----测试NFASimulation.rulesFor-----')
 console.log(simulation.rulesFor([1,2]));
+console.log('-----测试NFASimulation.discoverStatesAndRules-----')
+console.log(simulation.discoverStatesAndRules([nfaDesign.toNfa().currentStates]));
 
 
