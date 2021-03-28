@@ -1,5 +1,5 @@
 import FARule from "../common/FARule.js";
-import { flat, deepContain } from '../common/utils.js';
+import { flat, deepContain, uniqueArrays } from '../common/utils.js';
 
 export default class NFASimulation {
   constructor(nfaDesign) {
@@ -33,7 +33,8 @@ export default class NFASimulation {
   discoverStatesAndRules = (states) => {
     const rules = flat(states.map(stateSet => this.rulesFor(stateSet)));
     const moreStates = rules.map(rule => rule.follow());
-    if (deepContain(moreStates, states)) return [states, rules];
-    return this.discoverStatesAndRules([...new Set(states.concat(moreStates))]);
+    
+    if (deepContain(states, moreStates)) return [states, rules];
+    return this.discoverStatesAndRules(uniqueArrays(states.concat(moreStates)));
   }
 }
