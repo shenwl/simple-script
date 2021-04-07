@@ -37,8 +37,13 @@ console.log(simulation.nextState([1, 3, 2], 'a'))  // [1,2]
 console.log('-----测试NFARuleBook.alphabet-----')
 console.log(ruleBook.alphabet);
 console.log('-----测试NFASimulation.rulesFor-----')
-console.log(simulation.rulesFor([1,2]));
+console.log(simulation.rulesFor([1,2])); // [1,2 -> a -> 1,2, 1,2 -> b -> 3,2]
 console.log('-----测试NFASimulation.discoverStatesAndRules-----')
 console.log(simulation.discoverStatesAndRules([nfaDesign.toNfa().currentStates]));
+console.log('-----测试NFASimulation.toDfaDesign-----')
+const dfaDesign = simulation.toDfaDesign();
+console.log(dfaDesign.accepts('aaa')); // false
+console.log(dfaDesign.accepts('aab'));  // true
+console.log(dfaDesign.accepts('bbbabb')); // true
 
 

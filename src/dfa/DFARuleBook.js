@@ -10,7 +10,10 @@ export default class DFARuleBook {
    */
   nextState = (state, char) => {
     const rule = this.ruleFor(state, char);
-    if(!rule) throw Error(`can not find rule for state: ${state}, char: ${char} !`);
+    if (!rule) throw Error(`can not find rule for state: ${state}, char: ${char} !`);
+    if (Array.isArray(rule)) {
+      return rule.map(r => r.follow());
+    }
     return rule.follow();
   }
 
@@ -20,13 +23,13 @@ export default class DFARuleBook {
    * @param {*} char 
    */
   ruleFor = (state, char) => {
-    let rule = null;
+    let matchRules = [];
 
     (this.rules || []).forEach(item => {
       if (item.applyTo(state, char)) {
-        rule = item;
+        matchRules.push(item);
       }
     });
-    return rule;
+    return matchRules.length > 1 ? matchRules : matchRules[0];
   }
 }

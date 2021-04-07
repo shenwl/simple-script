@@ -1,5 +1,7 @@
 import FARule from "../common/FARule.js";
 import { flat, deepContain, uniqueArrays } from '../common/utils.js';
+import DFADesign from "../dfa/DFADesign.js";
+import DFARuleBook from "../dfa/DFARuleBook.js";
 
 export default class NFASimulation {
   constructor(nfaDesign) {
@@ -31,10 +33,23 @@ export default class NFASimulation {
    * @param {*} states 出发状态
    */
   discoverStatesAndRules = (states) => {
-    const rules = flat(states.map(stateSet => this.rulesFor(stateSet)));
+    const rules = flat(states.map(stateSet => {
+      return this.rulesFor(stateSet);
+    }));
     const moreStates = rules.map(rule => rule.follow());
-    
+
     if (deepContain(states, moreStates)) return [states, rules];
     return this.discoverStatesAndRules(uniqueArrays(states.concat(moreStates)));
+  }
+
+  /**
+   * 生成NFADesign
+   */
+  toDfaDesign = () => {
+    const startStates = this.nfaDesign.currentStates;
+    const [states, rules] = this.discoverStatesAndRules([startStates]);
+    const acceptStates = states.filter(state => this.nfaDesign.toNfa(state).accepting);
+
+    return new DFADesign(startStates, acceptStates, new DFARuleBook(rules));
   }
 }

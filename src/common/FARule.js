@@ -1,3 +1,4 @@
+import { isEqualArray } from './utils.js';
 export default class FARule {
   /**
    * @param {*} state 当前状态
@@ -16,7 +17,7 @@ export default class FARule {
    * @param {*} char 
    */
   applyTo = (state, char) => {
-    return (this.state === state) && (this.char === char);
+    return (this.state === state || isEqualArray(this.state, state)) && (this.char === char);
   }
 
   /**
@@ -24,5 +25,5 @@ export default class FARule {
    */
   follow = () => this.nextState;
 
-  toString = () => `FARule ${this.state.toString()} -- ${this.char} --> ${this.nextState.toString()}`;
+  toString = () => `FARule ${this.state} -- ${this.char} --> ${this.nextState}`;
 }

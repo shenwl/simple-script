@@ -42,14 +42,9 @@ export function deepContain(arr, subArr) {
 }
 
 export function isEqualArray(arr1, arr2) {
-  if (!arr1 || !arr2 || arr1.length !== arr2.length) return false;
-  const arr2Copy = [...arr2];
-  for (let item of arr1) {
-    const i = arr2Copy.indexOf(item);
-    if (i < 0) {
-      return false;
-    }
-    arr2Copy[i] = null;
+  if (!Array.isArray(arr1) || !Array.isArray(arr2) || arr1.length !== arr2.length) return false;
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) return false;
   }
   return true;
 }
@@ -77,4 +72,12 @@ export function uniqueArrays(arr) {
     }
   });
   return result;
+}
+
+export function includeArray(arrays, arr) {
+  if (!Array.isArray(arrays)) return false;
+  if (!Array.isArray(arr)) {
+    return flat(arrays).includes(arr);
+  }
+  return arrays.some(array => isEqualArray(array, arr));
 }
