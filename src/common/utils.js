@@ -74,7 +74,7 @@ export function uniqueArrays(arr) {
   return result;
 }
 
-export function includeArray(arrays, arr) {
+export function includes(arrays, arr) {
   if (!Array.isArray(arrays)) return false;
   if (!Array.isArray(arr)) {
     return flat(arrays).includes(arr);

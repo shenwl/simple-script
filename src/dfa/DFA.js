@@ -1,4 +1,4 @@
-import { includeArray } from '../common/utils.js';
+import { includes } from '../common/utils.js';
 
 export default class DFA {
   /**
@@ -17,7 +17,7 @@ export default class DFA {
    * @returns {boolean} 处于接受状态
    */
   get accepting() {
-    return includeArray(this.acceptStates, this.currentState);
+    return includes(this.acceptStates, this.currentState);
   }
 
   /**
